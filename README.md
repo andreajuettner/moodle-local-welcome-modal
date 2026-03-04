@@ -66,6 +66,25 @@ This plugin stores the user ID and a timestamp when a user chooses to permanentl
 - **The "Go to Library" button does not work**  
   - Verify that the configured URL is correct. If using a relative path, it must start with a slash (e.g. `/course/index.php`).
 
+## Changelog
+
+### 1.1.0 (2026-03-04)
+
+- **Migrated to new Moodle hook system**: Replaced the deprecated `before_standard_html_head` callback (deprecated since Moodle 4.4) with the new `core\hook\output\before_standard_head_html_generation` hook.
+- Added `classes/hook_callbacks.php` — new namespaced callback class `\local_welcome_modal\hook_callbacks`.
+- Added `db/hooks.php` — hook registration file.
+- Removed legacy callback function `local_welcome_modal_before_standard_html_head()` from `lib.php`.
+- Bumped plugin version to `2026030400`.
+
+### 1.0.0 (2026-02-23)
+
+- Initial release.
+- Welcome modal with personalised greeting on the dashboard.
+- Configurable modal size, library URL, session suppression, and session storage key.
+- Permanent dismissal via database record.
+- Privacy API implementation for GDPR compliance.
+- Site policy integration.
+
 ## Support
 
 If you encounter any issues or have questions, please contact:
